@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: url('https://4kwallpapers.com/images/wallpapers/gta-6-teaser-1920x1080-13559.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px 60px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.flip-card {
+    background: #6e4870;
+    padding: 20px 30px;
+    border-radius: 12px;
+    min-width: 80px;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    position: relative;
+    perspective: 1000px;
+}
+
+.flip-card span {
+    display: block;
+    animation: flip 0.6s ease forwards;
+}
+
+.flip-card p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+@keyframes flip {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(90deg); }
+    100% { transform: rotateX(0deg); }
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.2rem; }
+    .flip-card { font-size: 2.5rem; padding: 15px 20px; min-width: 60px; }
+}
+.trademark {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    font-size: 0.9rem;
+    color: #ffffffcc;  /* slightly transparent white */
+    font-weight: 500;
+    pointer-events: none; /* won’t interfere with clicks */
+    text-shadow: 1px 1px 3px black;
+    z-index: 1000;
+}
+/* Logo container */
+.logo-container {
+    text-align: center;
+    margin-bottom: 25px; /* Space between logo and countdown */
+}
+
+#logo {
+    max-width: 250px;
+    width: 40%;
+    height: auto;
+    display: inline-block;
+}
+.timezone {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    color: #ffffffcc; /* slightly transparent white */
+    text-shadow: 1px 1px 3px black;
+    pointer-events: none;
+    z-index: 1000;
+}
