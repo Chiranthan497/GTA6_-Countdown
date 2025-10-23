@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GTA 6 Countdown</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,12 +12,15 @@
 <div class="container">
     <!-- Logo GIF above the title -->
     <div class="logo-container">
-        <img src="https://cdn2.steamgriddb.com/icon_thumb/102ba266ac51ddd8ce981f766b3eb600.png" alt="GTA 6 Logo" id="gta-logo">
+        <img src="https://cdn2.steamgriddb.com/icon_thumb/102ba266ac51ddd8ce981f766b3eb600.png" 
+             alt="GTA 6 Logo" id="logo">
     </div>
 
-
+    <!-- Title -->
     <h1>Grand Theft Auto VI</h1>
     <h2>Countdown to Launch</h2>
+
+    <!-- Countdown Timer -->
     <div class="countdown">
         <div class="flip-card">
             <span id="days">00</span>
@@ -37,15 +40,18 @@
         </div>
     </div>
 
+    <!-- Message when countdown ends -->
     <p id="message"></p>
 </div>
 
 <!-- Bottom-left: Timezone -->
 <div class="timezone">*Timings are in IST (Indian Standard Time GMT+5:30)</div>
 
-<!-- Trademark -->
+<!-- Bottom-right: Trademark -->
 <div class="trademark">© Chiranthan</div>
 
+<!-- Countdown Script -->
 <script src="script.js"></script>
 </body>
 </html>
+
