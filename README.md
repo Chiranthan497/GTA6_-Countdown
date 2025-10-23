@@ -11,8 +11,11 @@ This project features:
   - Bottom-right: © Chiranthan (trademark)  
   - Bottom-left: Timing is in IST (in italics)  
 - **Responsive design** for desktop and mobile screens.  
-- Fully **customizable release date** in the JS file.  
+- Fully **customizable release date** in the JS file.
+---
+## Live Demo
 
+Check it out here: [GTA 6 Countdown](https://gta-6-countdown-beta.vercel.app/) 🚀
 ---
 Preview
 <img width="2240" height="1172" alt="Untitled 2" src="https://github.com/user-attachments/assets/b9c368a3-83af-4092-a647-6179468938a3" />
