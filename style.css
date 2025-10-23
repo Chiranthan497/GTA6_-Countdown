@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     background: url('https://4kwallpapers.com/images/wallpapers/gta-6-teaser-1920x1080-13559.png') no-repeat center center/cover;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,6 +46,10 @@ h2 {
     font-weight: 700;
     position: relative;
     perspective: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .flip-card span {
@@ -69,26 +73,10 @@ h2 {
     font-size: 1.2rem;
 }
 
-@media screen and (max-width: 600px) {
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.2rem; }
-    .flip-card { font-size: 2.5rem; padding: 15px 20px; min-width: 60px; }
-}
-.trademark {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    font-size: 0.9rem;
-    color: #ffffffcc;  /* slightly transparent white */
-    font-weight: 500;
-    pointer-events: none; /* won’t interfere with clicks */
-    text-shadow: 1px 1px 3px black;
-    z-index: 1000;
-}
 /* Logo container */
 .logo-container {
     text-align: center;
-    margin-bottom: 25px; /* Space between logo and countdown */
+    margin-bottom: 25px; /* Space between logo and title/countdown */
 }
 
 #logo {
@@ -97,16 +85,76 @@ h2 {
     height: auto;
     display: inline-block;
 }
+
+/* Bottom-left timezone */
 .timezone {
     position: fixed;
     bottom: 15px;
     left: 15px;
     font-size: 0.85rem;
-    font-family: 'Montserrat', sans-serif;
     font-style: italic;
     font-weight: 500;
-    color: #ffffffcc; /* slightly transparent white */
+    color: #ffffffcc;
     text-shadow: 1px 1px 3px black;
     pointer-events: none;
     z-index: 1000;
+}
+
+/* Bottom-right trademark */
+.trademark {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    font-size: 0.9rem;
+    color: #ffffffcc;
+    font-weight: 500;
+    pointer-events: none;
+    text-shadow: 1px 1px 3px black;
+    z-index: 1000;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 800px) {
+    .container {
+        padding: 30px 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    .flip-card {
+        font-size: 2.5rem;
+        padding: 15px 20px;
+        min-width: 60px;
+    }
+    #logo {
+        width: 60%;
+        max-width: 200px;
+    }
+    .timezone, .trademark {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .flip-card {
+        font-size: 2rem;
+        padding: 12px 15px;
+        min-width: 50px;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+    #logo {
+        width: 80%;
+        max-width: 180px;
+    }
 }
