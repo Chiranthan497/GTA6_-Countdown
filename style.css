@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0);
     padding: 40px 60px;
     border-radius: 15px;
     text-align: center;
@@ -40,7 +40,7 @@ h2 {
 }
 
 .flip-card {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     padding: 20px 30px;
     border-radius: 12px;
     min-width: 80px;
