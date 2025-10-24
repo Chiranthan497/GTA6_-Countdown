@@ -8,8 +8,8 @@ This project features:
 - **GTA 6 logo** displayed above the title (supports GIF or PNG).  
 - **Transparent GTA 6 teaser background** for a cinematic feel.  
 - **Trademark and time zone labels**:  
-  - Bottom-right: © Chiranthan (trademark)  
-  - Bottom-left: Timing is in IST (in italics)  
+  - Bottom-right: © Asterix(trademark)  
+  - Bottom-left: Timings according to user's local timezone (in italics)  
 - **Responsive design** for desktop and mobile screens.  
 - Fully **customizable release date** in the JS file.
 ---
