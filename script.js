@@ -1,7 +1,7 @@
-// Set GTA 6 release date
-const releaseDate = new Date("May 26, 2026 00:00:00").getTime();
+// GTA 6 release date
+const releaseDate = new Date("May 26, 2026 00:00:00");
 
-// Grab DOM elements
+const monthsEl = document.getElementById('months');
 const daysEl = document.getElementById('days');
 const hoursEl = document.getElementById('hours');
 const minutesEl = document.getElementById('minutes');
@@ -9,30 +9,38 @@ const secondsEl = document.getElementById('seconds');
 const messageEl = document.getElementById('message');
 
 function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = releaseDate - now;
+    const now = new Date();
 
-    if (distance <= 0) {
+    // If release date reached
+    if (now >= releaseDate) {
         clearInterval(timer);
-        daysEl.textContent = hoursEl.textContent = minutesEl.textContent = secondsEl.textContent = "00";
+        monthsEl.textContent = daysEl.textContent = hoursEl.textContent = minutesEl.textContent = secondsEl.textContent = "00";
         messageEl.textContent = "🎉 GTA 6 HAS LAUNCHED! 🎮";
         return;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Calculate time left
+    let totalSeconds = Math.floor((releaseDate - now) / 1000);
+    const totalDays = Math.floor(totalSeconds / (3600 * 24));
+    const months = Math.floor(totalDays / 30); // approx months
+    const days = totalDays % 30;
+    totalSeconds %= 3600 * 24;
 
-    // Animate flip if number changes
+    const hours = Math.floor(totalSeconds / 3600);
+    totalSeconds %= 3600;
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+
     function animate(el, value) {
-        if (el.textContent != value) {
-            el.textContent = value.toString().padStart(2, '0');
+        const newValue = value.toString().padStart(2, '0');
+        if (el.textContent !== newValue) {
+            el.textContent = newValue;
             el.style.animation = 'flip 0.6s ease';
-            setTimeout(() => el.style.animation = '', 600);
+            setTimeout(() => (el.style.animation = ''), 600);
         }
     }
 
+    animate(monthsEl, months);
     animate(daysEl, days);
     animate(hoursEl, hours);
     animate(minutesEl, minutes);
