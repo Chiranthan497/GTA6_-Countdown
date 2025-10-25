@@ -6,7 +6,8 @@ This project features:
 
 - **Centered flip-style countdown timer** showing days, hours, minutes, and seconds.  
 - **GTA 6 logo** displayed above the title (supports GIF or PNG).  
-- **Transparent GTA 6 teaser background** for a cinematic feel.  
+- **Transparent GTA 6 teaser background** for a cinematic feel.
+- **While you Wait Section** With custom frames and embeds with GTA6 trailers.
 - **Trademark and time zone labels**:  
   - Bottom-right: © Asterix(trademark)  
   - Bottom-left: Timings according to user's local timezone (in italics)  
@@ -18,7 +19,9 @@ This project features:
 Check it out here: [GTA 6 Countdown](https://gta-6-countdown-beta.vercel.app/) 🚀
 ---
 Preview
-<img width="2240" height="1172" alt="Untitled 2" src="https://github.com/user-attachments/assets/b9c368a3-83af-4092-a647-6179468938a3" />
+<img width="2226" height="1141" alt="Untitled" src="https://github.com/user-attachments/assets/be26b453-bc06-4288-a3fc-72c257b04465" />
+<img width="2227" height="893" alt="Untitled 2" src="https://github.com/user-attachments/assets/edb0980c-bc95-41b8-85d0-11194cbd477e" />
+
 ---
 License
 
