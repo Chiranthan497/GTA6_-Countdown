@@ -10,18 +10,16 @@
 </head>
 <body>
 
+<!-- Main countdown container -->
 <div class="container">
-    <!-- Logo GIF above the title -->
     <div class="logo-container">
         <img src="https://cdn2.steamgriddb.com/icon_thumb/102ba266ac51ddd8ce981f766b3eb600.png"
              alt="GTA 6 Logo" id="logo">
     </div>
 
-    <!-- Title -->
     <h1>Grand Theft Auto VI</h1>
     <h2>Countdown to Launch</h2>
 
-    <!-- Countdown Timer -->
     <div class="countdown">
         <div class="flip-card">
             <span id="months">00</span>
@@ -45,19 +43,41 @@
         </div>
     </div>
 
-    <!-- Message when countdown ends -->
     <p id="message"></p>
 </div>
 
-<!-- Bottom-left: Timezone -->
-<div class="timezone">*Timings are based on your local timezone</div>
+<!-- While You Wait section -->
+<section class="trailers fade-section">
+    <h2> While You Wait...</h2>
+    <div class="videos">
+        <div class="video-box">
+            <iframe
+                    src="https://www.youtube.com/embed/QdBZY2fkU-0"
+                    title="GTA 6 Trailer 1"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+            <p class="caption">Trailer 1</p>
+        </div>
 
-<!-- Bottom-right: Trademark -->
+        <div class="video-box">
+            <iframe
+                    src="https://www.youtube.com/embed/VQRLujxTm3c"
+                    title="GTA 6 Trailer 2"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+            <p class="caption">Trailer 2</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- Footer info -->
+<div class="timezone">*Timings are based on your local timezone</div>
 <div class="trademark">© Asterix</div>
 
-<!-- Countdown Script -->
+<!-- JS -->
 <script src="script.js"></script>
 </body>
 </html>
-
-
