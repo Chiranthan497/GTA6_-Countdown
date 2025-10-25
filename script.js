@@ -14,7 +14,8 @@ function updateCountdown() {
     // If release date reached
     if (now >= releaseDate) {
         clearInterval(timer);
-        monthsEl.textContent = daysEl.textContent = hoursEl.textContent = minutesEl.textContent = secondsEl.textContent = "00";
+        monthsEl.textContent = daysEl.textContent = hoursEl.textContent =
+            minutesEl.textContent = secondsEl.textContent = "00";
         messageEl.textContent = "🎉 GTA 6 HAS LAUNCHED! 🎮";
         return;
     }
@@ -49,3 +50,31 @@ function updateCountdown() {
 
 const timer = setInterval(updateCountdown, 1000);
 updateCountdown();
+
+// --- Safe fade-in for the trailers section using IntersectionObserver ---
+(function() {
+    const fadeSection = document.querySelector('.fade-section');
+    if (!fadeSection) return; // if not found, skip safely
+
+    // initial state
+    fadeSection.classList.remove('visible');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -10% 0px',
+        threshold: 0.05
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                fadeSection.classList.add('visible');
+                // observe only once
+                obs.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    observer.observe(fadeSection);
+})();
+
