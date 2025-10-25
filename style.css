@@ -1,17 +1,21 @@
+/* --- Base Layout --- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     background: url('https://4kwallpapers.com/images/wallpapers/gta-6-teaser-1920x1080-13559.png') no-repeat center center/cover;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* --- Main Container --- */
 .container {
     background: rgba(0, 0, 0, 0);
     padding: 40px 60px;
@@ -20,18 +24,23 @@ body {
     max-width: 800px;
     width: 90%;
     box-sizing: border-box;
+    margin-top: 60px;
 }
 
 h1 {
-    font-size: 2.8rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.8rem;
     margin-bottom: 10px;
 }
 
 h2 {
-    font-size: 1.6rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.9em;
+    letter-spacing: 2px;
     margin-bottom: 30px;
 }
 
+/* --- Countdown Section --- */
 .countdown {
     display: flex;
     justify-content: center;
@@ -40,14 +49,13 @@ h2 {
 }
 
 .flip-card {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0);
     padding: 20px 30px;
     border-radius: 12px;
     min-width: 80px;
     text-align: center;
     font-size: 3.5rem;
     font-weight: 700;
-    position: relative;
     perspective: 1000px;
     display: flex;
     flex-direction: column;
@@ -76,6 +84,7 @@ h2 {
     font-size: 1.2rem;
 }
 
+/* --- Logo --- */
 .logo-container {
     text-align: center;
     margin-bottom: 25px;
@@ -88,7 +97,7 @@ h2 {
     display: inline-block;
 }
 
-/* Bottom-left timezone */
+/* --- Footer (Timezone + Trademark) */
 .timezone {
     position: fixed;
     bottom: 15px;
@@ -102,7 +111,6 @@ h2 {
     z-index: 1000;
 }
 
-/* Bottom-right trademark */
 .trademark {
     position: fixed;
     bottom: 15px;
@@ -115,30 +123,94 @@ h2 {
     z-index: 1000;
 }
 
-/* Fix white gaps on mobile */
-@supports (-webkit-touch-callout: none) {
-    body {
-        min-height: -webkit-fill-available;
-    }
-    html {
-        height: -webkit-fill-available;
+/* --- Trailer Section --- */
+.trailers {
+    text-align: center;
+    color: #ffffff;
+    padding: 60px 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto 80px; /* reduced top margin */
+    box-sizing: border-box;
+}
+
+.trailers h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    letter-spacing: 2px;
+    color: #fdf8cc;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.videos {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.video-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.videos iframe {
+    border-radius: 12px;
+    width: 500px;       /* desktop size */
+    max-width: 100%;    /* responsive */
+    height: 320px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.videos iframe:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+/* Captions below trailers */
+.caption {
+    margin-top: 12px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* --- Fade Animation --- */
+.fade-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease-out;
+}
+
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive Tweaks --- */
+@media screen and (max-width: 1024px) {
+    .videos iframe {
+        width: 400px;
+        height: 280px;
     }
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 800px) {
     .container {
         padding: 30px 40px;
     }
-}
-
-@media screen and (max-width: 600px) {
-    h1 {
-        font-size: 2rem;
+    body {
+        background-attachment: scroll;
     }
-    h2 {
-        font-size: 1.2rem;
-    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.2rem; }
     .flip-card {
         font-size: 2.5rem;
         padding: 15px 20px;
@@ -149,7 +221,7 @@ h2 {
         max-width: 200px;
     }
     .timezone {
-        bottom: 40px;
+        bottom: 60px; /* move higher */
         left: 50%;
         transform: translateX(-50%);
         font-size: 0.75rem;
@@ -162,6 +234,14 @@ h2 {
         font-size: 0.75rem;
         text-align: center;
     }
+    .videos iframe {
+        width: 90%;
+        max-width: 350px;
+        height: 200px;
+    }
+    .caption {
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -170,14 +250,17 @@ h2 {
         padding: 12px 15px;
         min-width: 50px;
     }
-    h1 {
-        font-size: 1.6rem;
-    }
-    h2 {
-        font-size: 1rem;
-    }
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1rem; }
     #logo {
         width: 80%;
         max-width: 180px;
+    }
+    .videos iframe {
+        max-width: 300px;
+        height: 180px;
+    }
+    .caption {
+        font-size: 1rem;
     }
 }
